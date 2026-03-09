@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prativa Kunar Portfolio</title>
+<style>
+
+body{
+font-family: Arial;
+background:#f4f6fb;
+margin:0;
+}
+
+header{
+background:#163a63;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+section{
+background:white;
+margin:20px;
+padding:20px;
+border-radius:8px;
+}
+
+h2{
+color:#163a63;
+}
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Prativa Kunar</h1>
+<p>Education Consultant | Student Recruitment | Admissions Support</p>
+</header>
+
+<section>
+<h2>About Me</h2>
+<p>
+I am an education consultant experienced in student counselling,
+admissions support, and coordination with universities and partners.
+</p>
+</section>
+
+<section>
+<h2>Experience</h2>
+<ul>
+<li>Student application support</li>
+<li>University coordination</li>
+<li>Admissions follow-up</li>
+<li>Event and webinar support</li>
+</ul>
+</section>
+
+<section>
+<h2>Projects</h2>
+<ul>
+<li>Virtual Higher Education Expo coordination</li>
+<li>Student recruitment support</li>
+<li>Education marketing outreach</li>
+</ul>
+</section>
+
+<section>
+<h2>Skills</h2>
+<ul>
+<li>Student counselling</li>
+<li>Admissions processing</li>
+<li>Communication</li>
+<li>Event coordination</li>
+</ul>
+</section>
+
+<section>
+<h2>Contact</h2>
+<p>Email: kunarprativa@gmail.com</p>
+<p>LinkedIn: https://www.linkedin.com/in/prativa-k-840b81118</p>
+</section>
+
+<footer>
+<p>© 2026 Prativa Kunar</p>
+</footer>
+
+</body>
+</html>
