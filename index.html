@@ -1,94 +1,505 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Prativa Kunar Portfolio</title>
-<style>
-
-body{
-font-family: Arial;
-background:#f4f6fb;
-margin:0;
-}
-
-header{
-background:#163a63;
-color:white;
-padding:40px;
-text-align:center;
-}
-
-section{
-background:white;
-margin:20px;
-padding:20px;
-border-radius:8px;
-}
-
-h2{
-color:#163a63;
-}
-
-footer{
-text-align:center;
-padding:20px;
-}
-
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prativa Kunar | Operations & Partnerships Professional</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f4f7fb;
+    }
+    .container {
+      width: 90%;
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #12385f, #2e6faa);
+      color: white;
+      padding: 84px 20px 72px;
+      text-align: center;
+    }
+    .profile-photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.95);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      margin-bottom: 20px;
+      background: white;
+    }
+    header h1 {
+      font-size: 2.9rem;
+      margin-bottom: 12px;
+      letter-spacing: 0.4px;
+    }
+    .hero-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .hero-subtext {
+      max-width: 840px;
+      margin: 0 auto 24px;
+      font-size: 1.03rem;
+      color: rgba(255,255,255,0.92);
+    }
+    .hero-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+    .badge {
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      margin: 6px;
+      transition: 0.2s ease;
+    }
+    .btn-primary {
+      background: white;
+      color: #12385f;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      border: 1px solid rgba(255,255,255,0.45);
+    }
+    .btn:hover { transform: translateY(-1px); }
+    nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+    nav .container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 22px;
+      padding: 15px 0;
+    }
+    nav a {
+      color: #12385f;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.97rem;
+    }
+    section { padding: 64px 0; }
+    .section-title {
+      font-size: 2rem;
+      color: #12385f;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .section-subtext {
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 34px;
+      color: #4b5563;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+    .grid {
+      display: grid;
+      gap: 22px;
+    }
+    .grid-2 {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-top: 22px;
+    }
+    .metric {
+      background: #f8fbff;
+      border: 1px solid #e6eef8;
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+    }
+    .metric h3 {
+      color: #12385f;
+      font-size: 1.7rem;
+      margin-bottom: 6px;
+    }
+    .role-card h3,
+    .skill-card h3,
+    .project-card h3,
+    .achievement-card h3,
+    .focus-card h3 {
+      color: #12385f;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+    }
+    .role-card .company {
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 4px;
+    }
+    .role-card .duration {
+      color: #6b7280;
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+    .two-col-list {
+      columns: 2;
+      column-gap: 32px;
+    }
+    .contact p { margin-bottom: 10px; }
+    .contact a {
+      color: #12385f;
+      text-decoration: none;
+      font-weight: 700;
+      word-break: break-word;
+    }
+    .note {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+    footer {
+      background: #12385f;
+      color: white;
+      text-align: center;
+      padding: 28px 20px;
+      margin-top: 32px;
+    }
+    @media (max-width: 760px) {
+      header h1 { font-size: 2.2rem; }
+      .hero-title { font-size: 1.08rem; }
+      .section-title { font-size: 1.65rem; }
+      .two-col-list { columns: 1; }
+      nav .container { gap: 14px; }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="container">
+      <img class="profile-photo" src="https://via.placeholder.com/140" alt="Prativa Kunar" />
+      <h1>Prativa Kunar</h1>
+      <p class="hero-title">Operations & Partnerships Professional | Program Coordination | Recruitment Strategy | Business Development</p>
+      <p class="hero-subtext">Cross-industry professional with 10+ years of experience spanning education, aviation, administration, customer operations, stakeholder coordination, compliance processes, and growth-focused business support.</p>
+      <div class="hero-badges">
+        <span class="badge">Operations Management</span>
+        <span class="badge">Partnerships & Stakeholder Engagement</span>
+        <span class="badge">Program Coordination</span>
+        <span class="badge">Business Development</span>
+      </div>
+      <a class="btn btn-primary" href="#experience">View Experience</a>
+      <a class="btn btn-secondary" href="#contact">Contact Me</a>
+    </div>
+  </header>
 
-<header>
-<h1>Prativa Kunar</h1>
-<p>Education Consultant | Student Recruitment | Admissions Support</p>
-</header>
+  <nav>
+    <div class="container">
+      <a href="#about">About</a>
+      <a href="#focus">Professional Focus</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Value Snapshot</a>
+      <a href="#skills">Core Skills</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-<section>
-<h2>About Me</h2>
-<p>
-I am an education consultant experienced in student counselling,
-admissions support, and coordination with universities and partners.
-</p>
-</section>
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">Professional Profile</h2>
+      <p class="section-subtext">Positioned for operations, coordination, partnerships, recruitment, engagement, and business development roles across multiple sectors.</p>
+      <div class="card">
+        <p>Operations and partnerships professional with over 10 years of progressive experience across international education, aviation operations, corporate administration, customer service, and business development. Demonstrated capability in documentation management, stakeholder coordination, compliance processes, team supervision, and operational workflow management.</p>
+        <br />
+        <p>Experienced in supporting recruitment pipelines, institutional and client relationships, cross-functional communication, service delivery, and growth-oriented initiatives. Recognised for strong organisational capability, professionalism, and the ability to manage high-volume responsibilities while maintaining accuracy and efficiency.</p>
+        <div class="metric-grid">
+          <div class="metric">
+            <h3>10+</h3>
+            <p>Years of experience</p>
+          </div>
+          <div class="metric">
+            <h3>5+</h3>
+            <p>Sectors and functions</p>
+          </div>
+          <div class="metric">
+            <h3>4</h3>
+            <p>Languages</p>
+          </div>
+          <div class="metric">
+            <h3>End-to-End</h3>
+            <p>Operations exposure</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>Experience</h2>
-<ul>
-<li>Student application support</li>
-<li>University coordination</li>
-<li>Admissions follow-up</li>
-<li>Event and webinar support</li>
-</ul>
-</section>
+  <section id="focus">
+    <div class="container">
+      <h2 class="section-title">Professional Focus</h2>
+      <p class="section-subtext">Suitable for leadership-track and coordinator roles across education, corporate services, operations, travel, hospitality, and service-based sectors.</p>
+      <div class="grid grid-3">
+        <div class="card focus-card">
+          <h3>Operations Management</h3>
+          <p>Workflow coordination, process control, documentation management, service delivery, and day-to-day operational oversight.</p>
+        </div>
+        <div class="card focus-card">
+          <h3>Program & Project Coordination</h3>
+          <p>Cross-team coordination, scheduling, stakeholder updates, event support, and execution of structured initiatives.</p>
+        </div>
+        <div class="card focus-card">
+          <h3>Partnerships & Engagement</h3>
+          <p>Relationship management with clients, providers, institutions, partners, and internal teams to support growth and continuity.</p>
+        </div>
+        <div class="card focus-card">
+          <h3>Recruitment & Pipeline Support</h3>
+          <p>Admissions workflows, candidate guidance, documentation review, partner coordination, and conversion support.</p>
+        </div>
+        <div class="card focus-card">
+          <h3>Business Development</h3>
+          <p>Client relationship building, market awareness, service promotion, and support for expansion-focused initiatives.</p>
+        </div>
+        <div class="card focus-card">
+          <h3>Customer & Stakeholder Operations</h3>
+          <p>High-volume communication, issue resolution, quality service standards, and professional coordination across touchpoints.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>Projects</h2>
-<ul>
-<li>Virtual Higher Education Expo coordination</li>
-<li>Student recruitment support</li>
-<li>Education marketing outreach</li>
-</ul>
-</section>
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional Experience</h2>
+      <p class="section-subtext">Resume-based experience reframed for broader, recruiter-facing positions.</p>
+      <div class="grid grid-2">
+        <div class="card role-card">
+          <div class="company">Global Education Alliance (GEA) | Melbourne, VIC</div>
+          <div class="duration">Education Consultant | September 2025 – Present</div>
+          <ul>
+            <li>Managed end-to-end admissions processes, documentation flow, and compliance-related coordination for domestic and offshore applicants.</li>
+            <li>Liaised with universities and colleges regarding offers, CoEs, application progress, and operational updates.</li>
+            <li>Maintained data integrity, accurate records, and communication workflows across stakeholders.</li>
+            <li>Supported webinars, recruitment campaigns, institutional engagement, and partner relationship management.</li>
+          </ul>
+        </div>
+        <div class="card role-card">
+          <div class="company">NSW PTE Study Centre PTY LTD | Brisbane, QLD</div>
+          <div class="duration">PTE Consultant & Administrative Support | June 2024 – February 2025</div>
+          <ul>
+            <li>Managed scheduling, student records, enquiries, and administrative documentation.</li>
+            <li>Supported operational continuity through database accuracy and daily office coordination.</li>
+            <li>Provided process guidance and front-line support to learners and clients.</li>
+          </ul>
+        </div>
+        <div class="card role-card">
+          <div class="company">Spicy MOMO House | Brisbane, QLD</div>
+          <div class="duration">Restaurant Manager | December 2023 – February 2025</div>
+          <ul>
+            <li>Supervised daily operations including staffing, rostering, workflow coordination, and service standards.</li>
+            <li>Managed cash handling, reporting, inventory control, and supplier coordination.</li>
+            <li>Resolved operational issues while maintaining customer experience and team performance.</li>
+          </ul>
+        </div>
+        <div class="card role-card">
+          <div class="company">Success Education and Visa Services | Brisbane, QLD</div>
+          <div class="duration">Contract Administrator | November 2022 – January 2024</div>
+          <ul>
+            <li>Managed institutional agreements, compliance documentation, and contract-related records.</li>
+            <li>Monitored deadlines and maintained structured administrative support for senior management.</li>
+            <li>Coordinated with colleges and health providers to support contract execution and workflow efficiency.</li>
+          </ul>
+        </div>
+        <div class="card role-card">
+          <div class="company">Marvelous Travels and Tours Pvt. Ltd. | Kathmandu, Nepal</div>
+          <div class="duration">Reservation and Ticketing Manager | May 2020 – June 2022</div>
+          <ul>
+            <li>Supervised reservation and ticketing operations while ensuring compliance with airline regulations.</li>
+            <li>Managed financial transactions, reporting, team coordination, and service issue resolution.</li>
+            <li>Maintained workflow efficiency in a high-volume customer-facing environment.</li>
+          </ul>
+        </div>
+        <div class="card role-card">
+          <div class="company">GSA of Air Arabia | Kathmandu, Nepal</div>
+          <div class="duration">Reservation and Ticketing Supervisor | August 2018 – May 2020</div>
+          <ul>
+            <li>Oversaw daily booking and ticketing operations, documentation accuracy, and service quality.</li>
+            <li>Ensured regulatory compliance while coordinating team workflow and customer support.</li>
+          </ul>
+        </div>
+        <div class="card role-card">
+          <div class="company">GSA of Regent Airlines | Kathmandu, Nepal</div>
+          <div class="duration">Business Development Officer | March 2015 – August 2018</div>
+          <ul>
+            <li>Developed marketing initiatives, monitored industry trends, and identified business growth opportunities.</li>
+            <li>Maintained corporate client relationships and supported reporting systems for performance visibility.</li>
+          </ul>
+        </div>
+        <div class="card role-card">
+          <div class="company">Integrated Mobility Solutions (IMS) Group Pvt. Ltd. | Kathmandu, Nepal</div>
+          <div class="duration">HR and Admin Executive | August 2014 – March 2015</div>
+          <ul>
+            <li>Maintained HR documentation, employee records, and database accuracy.</li>
+            <li>Supported recruitment activities, administrative coordination, and compliance with company policies.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>Skills</h2>
-<ul>
-<li>Student counselling</li>
-<li>Admissions processing</li>
-<li>Communication</li>
-<li>Event coordination</li>
-</ul>
-</section>
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">Value Snapshot</h2>
+      <p class="section-subtext">A recruiter-friendly summary of the strengths your background brings to broader roles.</p>
+      <div class="grid grid-3">
+        <div class="card project-card">
+          <h3>Operational Coordination</h3>
+          <p>Hands-on experience managing workflows, records, scheduling, compliance processes, and daily operational continuity across multiple environments.</p>
+        </div>
+        <div class="card project-card">
+          <h3>Stakeholder Management</h3>
+          <p>Strong track record of liaising with clients, institutions, providers, suppliers, and internal teams to move processes forward efficiently.</p>
+        </div>
+        <div class="card project-card">
+          <h3>Growth & Engagement Support</h3>
+          <p>Supported recruitment campaigns, engagement activities, client relationships, marketing initiatives, and service-focused business development efforts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>Contact</h2>
-<p>Email: kunarprativa@gmail.com</p>
-<p>LinkedIn: https://www.linkedin.com/in/prativa-k-840b81118</p>
-</section>
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">Core Skills</h2>
+      <p class="section-subtext">Transferable strengths aligned with management, coordination, and growth-oriented positions.</p>
+      <div class="grid grid-3">
+        <div class="card skill-card">
+          <h3>Operations & Administration</h3>
+          <ul>
+            <li>Operational workflow management</li>
+            <li>Documentation and records control</li>
+            <li>Compliance process support</li>
+            <li>Scheduling and coordination</li>
+          </ul>
+        </div>
+        <div class="card skill-card">
+          <h3>People & Stakeholder Coordination</h3>
+          <ul>
+            <li>Stakeholder communication</li>
+            <li>Client and partner engagement</li>
+            <li>Cross-functional coordination</li>
+            <li>Issue resolution</li>
+          </ul>
+        </div>
+        <div class="card skill-card">
+          <h3>Growth & Delivery</h3>
+          <ul>
+            <li>Recruitment and pipeline support</li>
+            <li>Business development exposure</li>
+            <li>Customer service excellence</li>
+            <li>Event and campaign support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>
-<p>© 2026 Prativa Kunar</p>
-</footer>
+  <section id="achievements">
+    <div class="container">
+      <h2 class="section-title">Career Highlights</h2>
+      <p class="section-subtext">Strongest themes drawn from your resume and positioned for recruiter impact.</p>
+      <div class="grid grid-2">
+        <div class="card achievement-card">
+          <h3>Cross-Industry Capability</h3>
+          <p>Built practical leadership and coordination experience across education, aviation, administration, hospitality, and service environments.</p>
+        </div>
+        <div class="card achievement-card">
+          <h3>Operational Reliability</h3>
+          <p>Managed high-volume responsibilities involving deadlines, data accuracy, workflow continuity, documentation, and stakeholder communication.</p>
+        </div>
+        <div class="card achievement-card">
+          <h3>Relationship Management</h3>
+          <p>Maintained professional relationships with institutions, clients, suppliers, and corporate stakeholders to support smooth operations and growth.</p>
+        </div>
+        <div class="card achievement-card">
+          <h3>Leadership Potential</h3>
+          <p>Supervised teams, coordinated multi-party processes, and supported initiatives that required accountability, responsiveness, and service standards.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="education">
+    <div class="container">
+      <h2 class="section-title">Education & Languages</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3 style="color:#12385f; margin-bottom: 14px;">Education</h3>
+          <ul>
+            <li><strong>Master of Information Technology</strong> | Asia Pacific International College | 2025</li>
+            <li><strong>Bachelor of Business Studies</strong> | Premier College, Nepal | 2014</li>
+            <li><strong>Higher Secondary Education in Business Management</strong> | 2010</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="color:#12385f; margin-bottom: 14px;">Languages</h3>
+          <ul>
+            <li>English</li>
+            <li>Hindi</li>
+            <li>Nepali</li>
+            <li>Bengali</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="card contact">
+        <p><strong>Name:</strong> Prativa Kunar</p>
+        <p><strong>Email:</strong> <a href="mailto:kunarprativa@gmail.com">kunarprativa@gmail.com</a></p>
+        <p><strong>Phone:</strong> 0401769118</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/prativa-k-840b81118" target="_blank">linkedin.com/in/prativa-k-840b81118</a></p>
+        <p><strong>Location:</strong> Melbourne, VIC, Australia</p>
+        <p class="note">Tip: replace the profile image placeholder at the top with your professional photo for a stronger first impression.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Prativa Kunar | Portfolio Website</p>
+  </footer>
 </body>
 </html>
